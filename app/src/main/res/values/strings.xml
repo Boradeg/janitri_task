@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">janitri_task</string>
+    <string name="stop">Stop</string>
+    <string name="start">Start</string>
+    <string name="heart_rate">Heart Rate</string>
+    <string name="weight">Weight</string>
+    <string name="bpm">%1$s bpm</string>
+    <string name="kg">%1$s kg</string>
+    <string name="_80_mmhg">%1$s/80 mmHg</string>
+    <string name="blood_pressure">Blood Pressure</string>
+    <string name="kicks">%1$s Kicks</string>
+    <string name="baby_kicks">Baby Kicks</string>
+    <string name="add_vitals">Add Vitals</string>
+    <string name="sys_bp">Sys BP</string>
+    <string name="dia_bp">Dia BP</string>
+    <string name="weight_in_kg">Weight (in kg)</string>
+    <string name="submit">Submit</string>
+    <string name="track_my_pregnancy">Track My Pregnancy</string>
+    <string name="timer">Timer %1$s</string>
+    <string name="add">Add</string>
+    <string name="vitals_saved">Vitals saved!</string>
+    <string name="no_vitals_found_please_add_one">No vitals found. Please add one!</string>
+</resources>
