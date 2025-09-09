@@ -1,54 +1,100 @@
-# 🩺 Janitri Timer Task App
+# 🩺 Janitri Task App
 
-A simple Android app using Jetpack Compose and MVVM architecture. It features a **foreground service** that emits the current time every second and displays it live on the UI. Users can also input vitals like blood pressure, weight, and baby kicks, which are stored locally using Room DB.
-
----
-
-## ✨ Features
-
-- 🕒 **Foreground Timer Service** – Emits current time every second using a background `Service`.
-- 💉 **Dependency Injection (Hilt)** – Used for injecting Repository into ViewModel.
-- 🧠 **MVVM Architecture** – Clean separation between UI, business logic, and data layers.
-- 🧾 **Room Database** – Stores user-submitted vitals persistently.
-- 📱 **Jetpack Compose UI** – Entire UI is built with modern Compose.
-- ⚙️ **Reactive State Management** – Uses `State`, `StateFlow`, and `SharedFlow`.
-- 🧪 **Validation & Error Handling** – Validates input before storing, shows success/error UI events.
-- 📃 **LazyColumn with Stable Keys** – Efficiently renders the vitals list.
+This is a modular Android application developed using Kotlin, Jetpack Compose, and MVVM architecture. The app includes two major parts:
 
 ---
 
+## 🔹 Part I: Vitals Logger
+
+### ✅ Features
+
+- 📋 **Main Screen**: Displays a list of vitals logs using `LazyColumn`.
+- ➕ **Add Vitals Dialog**: A floating action button opens a Compose Dialog for data entry.
+- 🩸 **Vitals Entry Form** includes:
+  - Blood Pressure (Sys/Dia)
+  - Heart Rate
+  - Weight
+  - Baby Kicks Count
+- 💾 **Room Database**: Saves vitals locally with immediate UI updates.
+- 🔄 **Live Updates**: List auto-refreshes using `StateFlow` (or `LiveData`) when new vitals are added.
+- ✅ **Validation**: All input fields are validated before saving.
+- 🧹 **Error Handling**: Proper error feedback shown for missing or invalid inputs.
+
+---
+
+## 🔹 Part II: Background Timer Service
+
+### ✅ Features
+
+- 🕒 **Start Timer Button** on the main screen.
+- 🛠️ **Foreground Service** emits the current time every second.
+- 📡 **BroadcastReceiver** receives and displays the time live on the UI.
+- 💡 **Always-On Timer**:
+  - Continues running in background
+  - Survives app kill or removal from recent apps
+- 🧼 **Clean Communication**:
+  - No static/global variables
+  - Uses proper broadcast mechanism for updates
+- 📱 **UI Updates**: Live time shown in Compose UI.
+- ✅ Handles:
+  - Re-opening the app after it's killed
+  - Preventing memory leaks or multiple timers
+
+---
+
+## 🧠 Architecture
+
+- **MVVM** – Modular and testable codebase.
+- **Jetpack Compose** – Declarative UI using modern best practices.
+- **Room** – Local storage of vitals with entity and DAO.
+- **StateFlow** – Reactive state handling.
+- **Hilt** – Dependency injection.
+- **Service + BroadcastReceiver** – Clean background communication.
+
+---
 
 ---
 
 ## 📸 Screenshots
 
-> (Add screenshots here: timer running, input form, vitals history)
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/cb965282-7ad2-445e-b24e-1d3d27c2d2d3" width="30%" />
+  <img src="https://github.com/user-attachments/assets/159f3c44-960c-4309-86f6-20a9476e5b67" width="30%" />
+    <img src="https://github.com/user-attachments/assets/d70bf8b2-8339-453d-b296-751460b5cff8" width="30%" />
+  ![shared image]()
+![shared image (2)]()
+![shared image (1)]()
 
+</p>
 ---
 
 ## 🛠 Tech Stack
 
-- **Language**: Kotlin
-- **UI**: Jetpack Compose
-- **Architecture**: MVVM
-- **Dependency Injection**: Hilt
-- **Database**: Room
-- **Concurrency**: Kotlin Coroutines
-- **Notifications**: Foreground service notification
-- **BroadcastReceiver**: For timer communication
+| Component       | Tech Used            |
+|----------------|----------------------|
+| Language        | Kotlin               |
+| UI              | Jetpack Compose      |
+| Architecture    | MVVM                 |
+| DI              | Hilt                 |
+| DB              | Room                 |
+| Background Task | Foreground Service   |
+| State Mgmt      | StateFlow / LiveData |
+| Threading       | Coroutines           |
+| UI Elements     | LazyColumn, Dialog   |
 
 ---
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- Android Studio Flamingo or newer
+### ✅ Prerequisites
+- Android Studio Hedgehog or later
 - Android SDK 33+
-- Gradle 8+
+- Gradle 8.0+
 
-### Run Locally
+### 📦 Clone the project
 
 ```bash
-git clone https://github.com/gokulsidhman-cloud/janitri_task.git
+git clone https://github.com/Boradeg/janitri_task.git
 cd janitri_task
+3. Run the app on an emulator or device.
 
